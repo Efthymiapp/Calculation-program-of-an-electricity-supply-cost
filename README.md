@@ -31,28 +31,91 @@ Otherwise, a corresponding error message is displayed and a new price is request
 - **Logout**: Return to main screen.
 
 ---
-## 🧮 Cost Calculation Logic
+## 🧮 Detailed Cost Calculation Guide
 
-The **total energy bill** is computed as:
-Final Cost = (kWh × Energy Charge) + (sqm × Municipality Charge × Days / 365)
+The **Final Electricity Billing Cost** is computed using the following components:
 
-### 💡 Energy Charge per kWh
+- **Total energy consumption in kilowatt-hours (kWh)**
+- **Total area of the house in square meters (sqm)**
+- **Number of consumption days**, calculated from the **last 3 digits of the student ID**
 
-| Consumption (kWh) | Cost (€ / kWh) |
-|-------------------|----------------|
-| 0–1600            | 0.00542        |
-| 1601–2000         | 0.00682        |
-| >2000             | 0.00822        |
+The user inputs only:
+- The number of **kWh consumed**
+- The **size of their home (sqm)**
 
-### 🏠 Municipality Charge per sqm
-
-| Area (sqm)        | Cost (€ / sqm) |
-|-------------------|----------------|
-| 0–75              | 0.13           |
-| 76–115            | 0.26           |
-| >115              | 0.42           |
-
-🗓 **Days** are automatically calculated from the last 3 digits of the user's student ID (e.g., ID `E21123` → `123` days).
+The **number of days** is auto-derived from their academic ID.  
+> *For example: ID `E21123` implies 123 days of consumption.*
 
 ---
+
+### 🧾 Calculation Formulas
+
+```
+Municipality Cost = Square Meters × Municipality Rate × Days / 365
+
+Energy Charges    = kWh Consumed × Energy Rate
+
+Final Billing Cost = Municipality Cost + Energy Charges
+```
+
+---
+
+### 📊 Energy Rate Table
+
+| Consumption (kWh) | Tier | Energy Rate (€/kWh) |
+|-------------------|------|---------------------|
+| 0–1600            | 1    | €0.00542            |
+| 1601–2000         | 2    | €0.00682            |
+| >2000             | 3    | €0.00822            |
+
+---
+
+### 🏠 Municipality Charges Table
+
+| House Size (sqm) | Rate (€/sqm) |
+|------------------|--------------|
+| 0–75             | €0.13        |
+| 76–115           | €0.26        |
+| >115             | €0.42        |
+
+---
+
+## 🧑‍🏫 Example Calculation
+
+Suppose a user wants to calculate the cost for:
+
+- **1800 kWh consumed**
+- **Home area: 110 sqm**
+- **Student ID: E21090** → implies **90 days**
+
+---
+
+### 🔢 Step-by-step:
+
+**1. Municipality Cost:**
+
+```
+= 110 sqm × €0.26 × 90 / 365
+≈ €7.05
+```
+
+**2. Energy Charges:**
+
+- 1800 kWh falls under **Tier 2** → rate is €0.00682
+
+```
+= 1800 × €0.00682
+= €12.27
+```
+
+**3. Final Billing Cost:**
+
+```
+= €7.05 + €12.27
+= €19.32
+```
+
+---
+![image](https://github.com/user-attachments/assets/34ffddd7-5c81-4056-8bc0-d4ddcb6ddd93)
+
 
