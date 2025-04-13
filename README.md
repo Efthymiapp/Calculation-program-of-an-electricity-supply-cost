@@ -116,6 +116,11 @@ Suppose a user wants to calculate the cost for:
 ```
 
 ---
-![image](https://github.com/user-attachments/assets/34ffddd7-5c81-4056-8bc0-d4ddcb6ddd93)
+![image](https://github.com/user-attachments/assets/cda677c9-883e-4664-b79e-3486e8c4fcdd) 
+---
 
+![image](https://github.com/user-attachments/assets/fee40f5d-4f28-494b-a45d-2417c9999157)
+---
+
+![image](https://github.com/user-attachments/assets/32b46b4b-f8b6-4a22-a1b1-965efc95f53b)
 
