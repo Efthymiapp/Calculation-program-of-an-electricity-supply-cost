@@ -14,7 +14,7 @@ Depending on the input (admin or user), the system will present the correspondin
 - **Login**: Access personal account using username and password.
 - **User Menu (after login)**:
   - 🔢 `Calculate Cost`: Based on kilowatt-hour (kWh) consumption, home size (sqm), and derived number of days from the student's ID.
-  - 💳 `Payment`: Pay the final amount using **cash** or **card** (10% discount if paid by card).
+  - 💳 `Payment`: Pay the final amount using **cash** or **card** (10% discount if paid by card). At this point it should be checked that the user has entered 16 digit number for the card. Otherwise it will display a corresponding message and re -ask the insertion of the card number. In order for the payment to be successful, the user must then enter the correct final amount, Otherwise, an appropriate error message is displayed and the program re -introduces the importation of the amount. If he selects cash as a payment method, then it is sufficient to enter the final payment amount that had appeared to him earlier.
   - 🧾 `Receipt`: Print a receipt (available only after successful payment).
   - 🚪 `Exit`: Return to user screen.
 - **Logout**: Return to main screen.
@@ -25,7 +25,8 @@ Depending on the input (admin or user), the system will present the correspondin
 
 - **Login**: Use credentials `username: root` & `password: admin123`.
 - **Admin Menu**:
-  - ⚙️ `Change Cost`: Modify cost per kWh (within ±20% of existing values).
+  - ⚙️ `Change Cost`: Modify cost per kWh. The administrator is required to select the grade (1-3) for which he wishes to change the price of a kilowatt hour, as shown in the tables below. The difference between the new price from the old should not exceed an increase or decrease greater than 20% of the old price.
+Otherwise, a corresponding error message is displayed and a new price is requested.
   - 🚪 `Exit`: Return to admin screen.
 - **Logout**: Return to main screen.
 
